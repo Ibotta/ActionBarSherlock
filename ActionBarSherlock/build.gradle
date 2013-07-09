@@ -1,8 +1,5 @@
-dependencies {
-    compile([group: 'commons-io', name: 'commons-io', version: '2.4'])
-}
-
 buildscript {
+    
     repositories {
         mavenCentral()
     }
@@ -12,15 +9,20 @@ buildscript {
     }
 }
 
-dependencies {
-    compile files('libs/android-support-v4.jar')
-}
-
 apply plugin: 'android-library'
+
+dependencies {
+    compile 'com.android.support:support-v4:13.0.0'
+}
 
 android {
     compileSdkVersion 17
     buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 17
+    }
 
     sourceSets {
         main {
